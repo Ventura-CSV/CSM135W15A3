@@ -6,23 +6,42 @@
 TEST_CASE("Ex1", "[example]")
 {
 	const int N = 10;
-	Students s[N];
+	int array[N] = {25, 10, 15, 30, 35, 40, 45, 55, 20, 50};
+	// const int N = 5;
+	// int array[N] = {4, 2, 5, 6, 3};
 
-	makeStudents(s, N);
-	cout << "Initial Student's Struct Array \n";
-	printStudents(s, N);
-	bubbleSort(s, N);
+	quickSort(array, N);
 	cout << "After Sorting \n";
-	printStudents(s, N);
+	for (int v : array)
+		cout << v << "\t";
+	cout << endl;
 
-	REQUIRE(s[0].sid == 10001111);
-	REQUIRE(s[1].sid == 10005566);
-	REQUIRE(s[2].sid == 10006677);
-	REQUIRE(s[3].sid == 10007766);
-	REQUIRE(s[4].sid == 10007777);
-	REQUIRE(s[5].sid == 10007777);
-	REQUIRE(s[6].sid == 10007777);
-	REQUIRE(s[7].sid == 10008888);
-	REQUIRE(s[8].sid == 10009900);
-	REQUIRE(s[9].sid == 10009999);
+	REQUIRE(array[0] == 10);
+	REQUIRE(array[1] == 15);
+	REQUIRE(array[2] == 20);
+	REQUIRE(array[3] == 25);
+	REQUIRE(array[4] == 30);
+	REQUIRE(array[5] == 35);
+	REQUIRE(array[6] == 40);
+	REQUIRE(array[7] == 45);
+	REQUIRE(array[8] == 50);
+	REQUIRE(array[9] == 55);
+}
+
+TEST_CASE("Ex2", "[example]")
+{
+	const int N = 5;
+	int array[N] = {4, 2, 5, 6, 3};
+
+	quickSort(array, N);
+	cout << "After Sorting \n";
+	for (int v : array)
+		cout << v << "\t";
+	cout << endl;
+
+	REQUIRE(array[0] == 2);
+	REQUIRE(array[1] == 3);
+	REQUIRE(array[2] == 4);
+	REQUIRE(array[3] == 5);
+	REQUIRE(array[4] == 6);
 }
